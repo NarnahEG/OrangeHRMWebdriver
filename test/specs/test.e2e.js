@@ -4,6 +4,7 @@ const AddEmployeePage = require('../pageobjects/employee.page')
 //const AddAdminPage = require('../pageobjects/admin.page')
 //const SecurePage = require('../pageobjects/secure.page')
 const BuzzPage = require('../pageobjects/buzz.page')
+const TimePage = require('../pageobjects/time.page')
 
 describe('My OrangeHRM Application', () => {
     it('Login with valid credentials', async () => {
@@ -22,10 +23,16 @@ describe('My OrangeHRM Application', () => {
     //     await AddAdminPage.create('Admin','Jadine  Jackie', 'Enabled', 'Hiya', 'Jane2012!', 'Jane2012!');
     // })
 
-    it('Post a comment', async () => {
-        await BuzzPage.open()
-        await BuzzPage.post('Hi, I am new here')
-        //expect(browser).toHaveValue('dashboard');
+    // it('Post a comment', async () => {
+    //     await BuzzPage.open()
+    //     await BuzzPage.post('Hi, I am new here')
+    //     //expect(browser).toHaveValue('dashboard');
+    // })
+
+    it('Timesheet', async () => {
+        await TimePage.open()
+        await TimePage.view('Aliyah Haq')
+        expect(browser).toHaveValue('Aliyah Haq');
     })
 
 })
