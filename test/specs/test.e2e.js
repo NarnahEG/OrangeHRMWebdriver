@@ -5,6 +5,7 @@ const AddEmployeePage = require('../pageobjects/employee.page')
 //const SecurePage = require('../pageobjects/secure.page')
 const BuzzPage = require('../pageobjects/buzz.page')
 const TimePage = require('../pageobjects/time.page')
+const LogoutPage = require('../pageobjects/logout.page')
 
 describe('My OrangeHRM Application', () => {
     it('Login with valid credentials', async () => {
@@ -35,5 +36,10 @@ describe('My OrangeHRM Application', () => {
         expect(browser).toHaveValue('Aliyah Haq');
     })
 
+    it('Logout', async () => {
+        //await LogoutPage.open()
+        await LogoutPage.logout()
+        expect(browser).toHaveElementClass('.oxd-text oxd-text--h5 orangehrm-login-title')
+    })
 })
 
