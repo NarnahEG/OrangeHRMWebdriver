@@ -1,8 +1,9 @@
 const { expect } = require('@wdio/globals')
 const LoginPage = require('../pageobjects/login.page')
 const AddEmployeePage = require('../pageobjects/employee.page')
-const employeePage = require('../pageobjects/employee.page')
+//const AddAdminPage = require('../pageobjects/admin.page')
 //const SecurePage = require('../pageobjects/secure.page')
+const BuzzPage = require('../pageobjects/buzz.page')
 
 describe('My OrangeHRM Application', () => {
     it('Login with valid credentials', async () => {
@@ -11,9 +12,21 @@ describe('My OrangeHRM Application', () => {
         expect(browser).toHaveValue('dashboard');
     })
 
-    it('Create Employee', async () => {
-        await AddEmployeePage.open()
-        await AddEmployeePage.create('Jane', 'Aisha', 'Ashley')
+    // it('Create Employee', async () => {
+    //     await AddEmployeePage.open()
+    //     await AddEmployeePage.create('Jane', 'Aisha', 'Ashley')
+    // })
+
+    // it('Add Admin', async () => {
+    //     await AddAdminPage.open()
+    //     await AddAdminPage.create('Admin','Jadine  Jackie', 'Enabled', 'Hiya', 'Jane2012!', 'Jane2012!');
+    // })
+
+    it('Post a comment', async () => {
+        await BuzzPage.open()
+        await BuzzPage.post('Hi, I am new here')
+        //expect(browser).toHaveValue('dashboard');
     })
+
 })
 
