@@ -6,6 +6,7 @@ const AddEmployeePage = require('../pageobjects/employee.page')
 const BuzzPage = require('../pageobjects/buzz.page')
 const TimePage = require('../pageobjects/time.page')
 const LogoutPage = require('../pageobjects/logout.page')
+const SearchPage = require('../pageobjects/search.page')
 
 describe('My OrangeHRM Application', () => {
     it('Login with valid credentials', async () => {
@@ -34,6 +35,12 @@ describe('My OrangeHRM Application', () => {
         await TimePage.open()
         await TimePage.view('Aliyah Haq')
         expect(browser).toHaveValue('Aliyah Haq');
+    })
+
+    it('Search', async () => {
+        await SearchPage.open()
+        await SearchPage.search('Admin')
+        expect(browser).toHaveValue('Admin');
     })
 
     it('Logout', async () => {
