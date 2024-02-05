@@ -13,7 +13,7 @@
   "dependencies": {
     "mocha": "^10.2.0",
     "selenium-standalone": "^9.3.2",
-    "webdriverio": "^8.29.1"
+    "webdriverio": "^8.29.7"
   },
   "devDependencies": {
     "@wdio/cli": "^8.29.1",

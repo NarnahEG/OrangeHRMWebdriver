@@ -51,8 +51,14 @@ exports.config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
-    }],
+        //browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+            maxInstances: 5,
+            browserName: 'chrome',
+            acceptInsecureCerts: true,
+            'goog:chromeOptions': { 
+                args: ["--headless", "user-agent=...","--disable-gpu","--window-size=1440,735"]
+           }
+        }],
 
     //
     // ===================
@@ -61,7 +67,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'silent',
     //
     // Set specific log levels per logger
     // loggers:
@@ -292,4 +298,13 @@ exports.config = {
     */
     // afterAssertion: function(params) {
     // }
+    capabilities: [{
+  
+        maxInstances: 5,
+        browserName: 'chrome',
+        acceptInsecureCerts: true,
+        'goog:chromeOptions': { 
+            args: ["--headless", "user-agent=...","--disable-gpu","--window-size=1440,735"]
+       }
+    }]
 }
